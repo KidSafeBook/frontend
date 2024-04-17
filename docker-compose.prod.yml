@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.prod  # Assuming you have a Dockerfile for production
+    ports:
+      - "8080:3000"  # Adjust if your production environment uses a different port
+    volumes:
+      - /app/node_modules  # You might not need the code volume in production
+    environment:
+      - NODE_ENV=production
+    command: npm run start  # Assuming you have a 'start' script for production
