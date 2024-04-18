@@ -1,5 +1,10 @@
-import react from 'react';
+import React from "react";
 
+/**
+ * FunctionalitiesSideBar component.
+ *
+ * @returns {*} - JSX component.
+ */
 const FunctionalitiesSideBar = () => {
   return (
     <aside>
@@ -17,6 +22,6 @@ const FunctionalitiesSideBar = () => {
       </ul>
     </aside>
   );
-}
+};
 
 export default FunctionalitiesSideBar;

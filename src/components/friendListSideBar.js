@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ * Friend List Side Bar component.
+ *
+ * @returns {object} Friend List Side Bar component.
+ */
 const FriendListSideBar = () => {
 
   return (
@@ -18,6 +23,6 @@ const FriendListSideBar = () => {
       </ul>
     </aside>
   );
-}
+};
 
 export default FriendListSideBar;

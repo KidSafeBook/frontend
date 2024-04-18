@@ -6,11 +6,16 @@ import Footer from "./footer.js";
 import FriendListSideBar from "./friendListSideBar.js";
 import FunctionalitiesSideBar from "./functionalitiesSideBar.js";
 
+/**
+ * App component.
+ *
+ * @returns {*} - JSX component.
+ */
 function App() {
   return (
     <div className="App">
       <Menu />
-      <div id="root-body">
+      <div id="root-body" className="flex-1 w-full overflow-auto flex flex-row justify-between">
         <FunctionalitiesSideBar />
         <Main />
         <FriendListSideBar />

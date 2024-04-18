@@ -6,17 +6,18 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
-  entry: "./src/index.js",
+  mode: "development",
+  entry: "./src/index.js", // The entry point of the react app
   output: {
     path: path.resolve(__dirname, "dist"),
     filename: "bundle.js",
-    publicPath: "/", // Ensures that the paths are relative to the base of the server
+    // publicPath: "/", // Ensures that the paths are relative to the base of the server
   },
   module: {
     rules: [
       {
         test: /\.jsx?$/,
-        exclude: /node_modules/,
+        // exclude: /node_modules/,
         use: {
           loader: "babel-loader",
         },
@@ -25,7 +26,6 @@ export default {
         test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
-      // Assuming you might want SCSS support
       {
         test: /\.scss$/,
         use: ["style-loader", "css-loader", "sass-loader"],
@@ -40,6 +40,10 @@ export default {
   ],
   resolve: {
     extensions: [".js", ".jsx"],
+  },
+  watchOptions: {
+    poll: 1000, // Check for changes every second
+    ignored: /node_modules/, // Ignore changes to node_modules
   },
   devServer: {
     static: {
