@@ -1,5 +1,4 @@
-import React, { Component } from "react";
-import {v4 as uuidv4} from "uuid";
+import { v4 as uuidv4 } from "uuid";
 
 /**
  * Post class component.
@@ -17,13 +16,17 @@ class Post {
   /**
    * Constructor for Post class.
    *
-   * @param {string} authorId - The author's ID.
+   * @param {string} postId - The ID of the post.
+   * @param {string} authorId - The ID of the author of the post.
    * @param {string} content - The content of the post.
+   * @param {Array} comments - The comments on the post.
+   * @param {number} likes - The number of likes on the post.
+   * @param {number} dislikes - The number of dislikes on the post.
    * @param {Date} creationDateTime - The date and time the post was created.
    * @param {Date} editedDateTime - The date and time the post was last edited.
-   * @param {Array} comments - The comments on the post.
    */
-  constructor(postId=null, authorId, content = null, creationDateTime = null, editedDateTime = null, comments = []) {
+  constructor(postId = null, authorId, content = null, comments = [], likes = 0
+    , dislikes = 0, creationDateTime = null, editedDateTime = null) {
     this.#postId = postId ? postId : this.#generatePostId();
     this.#authorId = authorId;
     this.#content = this.#sanitizeContent(content);
