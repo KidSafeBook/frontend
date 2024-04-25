@@ -7,6 +7,7 @@ import React, { useState, useEffect } from "react";
  */
 const PostList = () => {
   const [records, setRecords] = useState([]);
+  const url = "http://localhost:3010";
 
   useEffect(() => {
     /**
@@ -14,9 +15,9 @@ const PostList = () => {
      */
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3010");
+        const response = await fetch(url);
         const json = await response.json();
-        console.log(`PostList - data: ${JSON.stringify(json)}`);
+        // console.log(`PostList - data: ${JSON.stringify(json)}`);
         setRecords(json.data);
       } catch (error) {
         console.error("Error fetching data:", error);
